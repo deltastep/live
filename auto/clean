@@ -3,3 +3,10 @@
 set -eu
 
 lb clean noauto "$@"
+
+rm -f config/binary
+rm -f config/bootstrap
+rm -f config/build
+rm -f config/chroot
+rm -f config/common
+rm -f config/source
