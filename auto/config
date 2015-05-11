@@ -3,5 +3,6 @@
 set -eu
 
 lb config noauto \
+	-a amd64 \
 	-d sid \
 	"$@"
