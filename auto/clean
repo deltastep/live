@@ -10,3 +10,5 @@ rm -f config/build
 rm -f config/chroot
 rm -f config/common
 rm -f config/source
+
+rm -rf config/hooks/
