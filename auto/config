@@ -2,4 +2,6 @@
 
 set -eu
 
-lb config noauto "$@"
+lb config noauto \
+	-d sid \
+	"$@"
