@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//GNUstep//DTD plist 0.9//EN" "http://www.gnustep.org/plist-0_9.xml">
+<plist version="0.9">
+<dict>
+	<key>DesktopApplicationName</key>
+	<string>GWorkspace</string>
+	<key>DesktopApplicationSelName</key>
+	<string>gworkspace</string>
+	<key>GSWorkspaceApplication</key>
+	<string>GWorkspace</string>
+	<key>NSDefaultOpenDirectory</key>
+	<string>/usr/lib/GNUstep/Applications</string>
+	<key>applications</key>
+	<dict>
+		<key>1</key>
+		<string>Terminal</string>
+		<key>2</key>
+		<string>TextEdit</string>
+		<key>3</key>
+		<string>SystemPreferences</string>
+	</dict>
+	<key>desktopinfo</key>
+	<dict>
+		<key>backcolor</key>
+		<dict>
+			<key>red</key>
+			<real>0.333</real>
+			<key>green</key>
+			<real>0.333</real>
+			<key>blue</key>
+			<real>0.333</real>
+			<key>alpha</key>
+			<real>1</real>
+		</dict>
+	</dict>
+	<key>shelfdicts</key> <!-- TODO this needs a viewer_at container -->
+	<array>
+		<dict>
+			<key>index</key>
+			<integer>0</integer>
+			<key>paths</key>
+			<array>
+				<string>/home/user</string> <!-- TODO generate using user substitution -->
+			</array>
+		</dict>
+		<dict>
+			<key>index</key>
+			<integer>1</integer>
+			<key>paths</key>
+			<array>
+				<string>/usr/lib/GNUstep/Applications</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
