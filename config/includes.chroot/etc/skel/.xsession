@@ -1,2 +1,11 @@
+if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
+	# Not configured -- generate the config
+	exec WindowMaker &
+	PID=$1
+	sleep 3
+	# TODO reduce delay here
+	kill -s INT $PID
+fi
+
 exec WindowMaker &
 exec GWorkspace
