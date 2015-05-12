@@ -2,6 +2,8 @@
 
 cache/
 
+chroot/
+
 config/binary
 config/bootstrap
 config/build
