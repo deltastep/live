@@ -3,6 +3,7 @@
 cache/
 
 chroot/
+chroot.*
 
 config/binary
 config/bootstrap
