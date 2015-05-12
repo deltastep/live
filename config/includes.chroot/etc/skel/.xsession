@@ -1,0 +1,2 @@
+exec WindowMaker &
+exec GWorkspace
