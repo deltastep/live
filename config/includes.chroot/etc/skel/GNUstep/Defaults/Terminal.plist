@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//GNUstep//DTD plist 0.9//EN" "http://www.gnustep.org/plist-0_9.xml">
+<plist version="0.9">
+<dict>
+    <key>BoldTerminalFont</key>
+    <string>DejaVu Sans Mono</string>
+    <key>BoldTerminalFontSize</key>
+    <real>10</real>
+    <key>TerminalFont</key>
+    <string>DejaVu Sans Mono</string>
+    <key>TerminalFontSize</key>
+    <string>10</string>
+</dict>
+</plist>
