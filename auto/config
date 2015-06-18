@@ -6,3 +6,5 @@ lb config noauto \
 	-a amd64 \
 	-d jessie \
 	"$@"
+
+cp config/hooks.*/* config/hooks/live/
