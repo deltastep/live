@@ -8,6 +8,9 @@ lb config noauto \
 	-a amd64 \
 	-d jessie \
 	--archive-areas "$ARCHIVE_AREAS" \
+	--iso-application "DeltaSTEP Live" \
+	--iso-publisher "DeltaSTEP Project" \
+	--bootappend-live "boot=live components hostname=deltastep" \
 	"$@"
 
 cp config/hooks.*/* config/hooks/live/
