@@ -17,3 +17,5 @@ config/source
 config/hooks/
 
 live-image-*
+
+.lock
