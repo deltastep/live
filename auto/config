@@ -11,6 +11,7 @@ lb config noauto \
 	--iso-application "DeltaSTEP Live" \
 	--iso-publisher "DeltaSTEP Project" \
 	--bootappend-live "boot=live components hostname=deltastep" \
+	--debian-installer live \
 	"$@"
 
 cp config/hooks.*/* config/hooks/live/
