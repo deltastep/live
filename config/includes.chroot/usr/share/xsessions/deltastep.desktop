@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=DeltaSTEP
+Exec=/usr/bin/deltastep-session
+Icon=
+Keywords=Window Manager
+Type=Application

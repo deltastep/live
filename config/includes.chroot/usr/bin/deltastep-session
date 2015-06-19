@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
 	# Not configured -- generate the config
 	exec WindowMaker &
@@ -7,5 +9,5 @@ if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
 	kill -s INT $PID
 fi
 
-exec WindowMaker &
-exec GWorkspace
+WindowMaker &
+GWorkspace
