@@ -10,6 +10,8 @@
 	<string>GWorkspace</string>
 	<key>NSDefaultOpenDirectory</key>
 	<string>/usr/lib/GNUstep/Applications</string>
+	<key>NSWorkspaceMoveOperationConfirm</key>
+	<string>YES</string>
 	<key>applications</key>
 	<dict>
 		<key>1</key>
