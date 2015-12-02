@@ -1,4 +1,5 @@
 {
+  RootMenuKey = None;
   DisableDock = YES;
   DisableClip = YES;
 }
