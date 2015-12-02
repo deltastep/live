@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat /etc/GNUstep/Defaults/WMWindowAttributes | sed -e 's/"\*" = {Icon = defaultAppIcon.tiff;};/"\*" = {NoAppIcon = Yes;};/' > /etc/GNUstep/Defaults/WMWindowAttributes.new
+rm /etc/GNUstep/Defaults/WMWindowAttributes
+mv /etc/GNUstep/Defaults/WMWindowAttributes.new /etc/GNUstep/Defaults/WMWindowAttributes
