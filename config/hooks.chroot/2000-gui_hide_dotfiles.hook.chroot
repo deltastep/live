@@ -1,0 +1,3 @@
+#!/bin/sh
+
+defaults write NSGlobalDomain GSFileBrowserHideDotFiles 1
