@@ -1,5 +1,6 @@
 {
   RootMenuKey = None;
+  WindowListKey = None;
   DisableDock = YES;
   DisableClip = YES;
 }
