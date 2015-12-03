@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /tmp
-git clone http://github.com/deltastep/theme-gnustep
+git clone https://github.com/deltastep/theme-gnustep
 mkdir -p /usr/lib/GNUstep/Theme
 cp -r theme-gnustep/DeltaSTEP.theme /usr/lib/GNUstep/Theme
 rm -rf theme-gnustep
