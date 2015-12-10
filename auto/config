@@ -2,7 +2,7 @@
 
 set -eu
 
-ARCHIVE_AREAS="main contrib"
+ARCHIVE_AREAS="main contrib non-free"
 
 lb config noauto \
 	-a amd64 \
