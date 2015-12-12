@@ -14,5 +14,5 @@ lb config noauto \
 	--debian-installer live \
 	"$@"
 
-mkdir -p config/hooks/live
-cp config/hooks.*/* config/hooks/live/
+mkdir -p config/hooks
+cp config/hooks.*/* config/hooks
