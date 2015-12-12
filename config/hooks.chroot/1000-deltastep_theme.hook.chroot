@@ -2,6 +2,6 @@
 
 cd /tmp
 git clone https://github.com/deltastep/theme-gnustep
-mkdir -p /usr/lib/GNUstep/Theme
-cp -r theme-gnustep/DeltaSTEP.theme /usr/lib/GNUstep/Theme
+mkdir -p /usr/lib/GNUstep/Themes
+cp -r theme-gnustep/DeltaSTEP.theme /usr/lib/GNUstep/Themes
 rm -rf theme-gnustep
