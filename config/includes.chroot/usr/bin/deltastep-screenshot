@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+FILE_FORMAT="png"
+
+screenshot_filename() {
+	date +"Screen Shot %Y-%m-%d at %H:%M:%S.$FILE_FORMAT"
+	# TODO disambiguation specifier
+}
+
+xwd -root -display :0 | gm convert - "$HOME/Desktop/`screenshot_filename`"
