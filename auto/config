@@ -12,6 +12,7 @@ lb config noauto \
 	--iso-publisher "DeltaSTEP Project" \
 	--bootappend-live "boot=live components hostname=deltastep" \
 	--debian-installer live \
+	--image-name "DeltaSTEP" \
 	"$@"
 
 mkdir -p config/hooks
