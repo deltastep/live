@@ -6,5 +6,7 @@
 	<string>DeltaSTEP</string>
 	<key>NSInterfaceStyleDefault</key>
 	<string>NSMacintoshInterfaceStyle</string>
+	<key>GSFileBrowserHideDotFiles</key>
+	<integer>1</integer>
 </dict>
 </plist>
