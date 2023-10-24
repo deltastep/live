@@ -4,5 +4,7 @@
 <dict>
 	<key>GSTheme</key>
 	<string>DeltaSTEP</string>
+	<key>NSInterfaceStyleDefault</key>
+	<string>NSMacintoshInterfaceStyle</string>
 </dict>
 </plist>
