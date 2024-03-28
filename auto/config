@@ -15,5 +15,5 @@ lb config noauto \
 	--image-name "DeltaSTEP" \
 	"$@"
 
-mkdir -p config/hooks
-cp config/hooks.*/* config/hooks
+mkdir -p config/hooks/normal
+cp config/hooks.*/* config/hooks/normal
