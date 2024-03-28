@@ -1,3 +1,0 @@
-#!/bin/sh
-
-defaults write TextEdit PlainTextEncoding 4
