@@ -1,4 +1,4 @@
-git
+# Desktop
 xorg
 wmaker
 gworkspace.app
@@ -6,3 +6,6 @@ lightdm
 terminal.app
 SystemPreferences.app
 graphicsmagick
+
+# Development
+git
