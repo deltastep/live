@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+# wopen doesn't handle '.' and '..' correctly, so handle them explicitly
+# Using a blanket `readlink -f` will resolve symlinks when probably not wanted
+
+if [ "$1" == "." ] || [ "$1" == ".." ]; then
+	wopen `readlink -f "$@"`
+else
+	wopen "$@"
+fi

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Categories=System;FileTools;FileManager;
+Name=deltastep-open
+Comment=DeltaSTEP open wrapper
+Exec=deltastep-open
