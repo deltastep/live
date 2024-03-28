@@ -8,6 +8,12 @@
 	<string>gworkspace</string>
 	<key>GSWorkspaceApplication</key>
 	<string>GWorkspace</string>
+	<key>GSWorkspaceEmptyRecyclerOpertatoin</key>
+	<true/>
+	<key>GWorkspaceEmptyRecyclerOperationConfirm</key>
+	<false/>
+	<key>GWorkspaceRecycleOutOperationConfirm</key>
+	<true/>
 	<key>NSDefaultOpenDirectory</key>
 	<string>/usr/lib/GNUstep/Applications</string>
 	<key>NSWorkspaceMoveOperationConfirm</key>
@@ -21,6 +27,8 @@
 		<key>3</key>
 		<string>SystemPreferences</string>
 	</dict>
+	<key>copyConfirm</key>
+	<true/>
 	<key>desktopinfo</key>
 	<dict>
 		<key>backcolor</key>
@@ -35,6 +43,10 @@
 			<real>1</real>
 		</dict>
 	</dict>
+	<key>moveConfirm</key>
+	<true/>
+	<key>recycleConfirm</key>
+	<true/>
 	<key>shelfdicts</key> <!-- TODO this needs a viewer_at container -->
 	<array>
 		<dict>
