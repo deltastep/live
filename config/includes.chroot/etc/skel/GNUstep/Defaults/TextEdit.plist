@@ -4,5 +4,7 @@
 <dict>
     <key>PlainTextEncoding</key>
     <integer>4</integer>
+    <key>PlainTextEncodingForWrite</key>
+    <integer>4</integer>
 </dict>
 </plist>
