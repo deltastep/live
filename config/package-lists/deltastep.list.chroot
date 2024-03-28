@@ -5,7 +5,7 @@ gworkspace.app
 dbus-user-session
 lightdm
 terminal.app
-SystemPreferences.app
+systempreferences.app
 graphicsmagick
 
 # Development
