@@ -16,7 +16,7 @@
 	<true/>
 	<key>NSDefaultOpenDirectory</key>
 	<string>/usr/lib/GNUstep/Applications</string>
-	<!-- Not sure if this is supposed to do somthing? -->
+	<!-- Not sure if this is supposed to do something? -->
 	<!--<key>NSWorkspaceMoveOperationConfirm</key>
 	<string>YES</string>-->
 	<key>applications</key>
