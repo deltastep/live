@@ -10,3 +10,9 @@ graphicsmagick
 
 # Development
 git
+
+# Utils
+file
+psmisc
+vim
+xxd
