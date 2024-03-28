@@ -29,6 +29,8 @@
 	</dict>
 	<key>copyConfirm</key>
 	<true/>
+	<key>defaulteditor</key>
+	<string>TextEdit.app</string>
 	<key>desktopinfo</key>
 	<dict>
 		<key>backcolor</key>
