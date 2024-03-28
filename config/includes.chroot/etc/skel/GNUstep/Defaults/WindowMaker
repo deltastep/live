@@ -3,4 +3,5 @@
   WindowListKey = None;
   DisableDock = YES;
   DisableClip = YES;
+  WorkspaceBack = (solid, "#555555");
 }
