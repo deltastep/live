@@ -1,0 +1,60 @@
+#!/bin/bash
+set -eu
+
+INTERVAL=30
+
+# Temporary utility to display menu bar info until the real thing is done
+
+CHARGE_PREV=""
+PREV_TIME=""
+
+while [ 1 ]; do
+	#VOLUME=`amixer get Master | awk -F"[][]" '/%/ { print $2 }' | sed 's/%//'`
+	VOLUME=`pamixer --get-volume`
+	#UNMUTE=`amixer get Master | awk -F"[][]" '/%/ { print $6 }'`
+	MUTE=`pamixer --get-mute`
+	#if [ "$UNMUTE" == "off" ]; then
+	if [ "$MUTE" == "true" ]; then
+		VOLUME_INDICATOR="<   "
+	elif [ "$MUTE" == "false" ]; then
+		if [ $VOLUME -gt 66 ]; then
+			VOLUME_INDICATOR="<)))"
+		elif [ $VOLUME -gt 33 ]; then
+			VOLUME_INDICATOR="<)) "
+		elif [ $VOLUME -gt 0 ]; then
+			VOLUME_INDICATOR="<)  "
+		else
+			VOLUME_INDICATOR="<   "
+		fi
+	fi
+
+	POWER_SOURCE=`cat /sys/class/power_supply/AC/online | grep 1 > /dev/null && echo AC || echo BATT`
+	
+	if [ -f /sys/class/power_supply/BAT0/charge_now ]; then
+		CHARGE_NOW=`cat /sys/class/power_supply/BAT0/charge_now`
+		CHARGE_FULL=`cat /sys/class/power_supply/BAT0/charge_full`
+	else
+		CHARGE_NOW=`cat /sys/class/power_supply/BAT0/energy_now`
+		CHARGE_FULL=`cat /sys/class/power_supply/BAT0/energy_full`
+	fi
+	TIME_NOW=`date +%s`
+
+	if [ "$CHARGE_PREV" == "" ]; then
+		ESTIMATE=""
+	else
+		DELTA=`perl -e "print($CHARGE_PREV - $CHARGE_NOW)"`
+		LEFT=`perl -e "print($CHARGE_NOW / $DELTA * $INTERVAL)"`
+		LEFT_MINUTES=`perl -e "printf(\"%02d\", $LEFT / 60 % 60)"`
+		LEFT_HOURS=`perl -e "print(int($LEFT / (60 * 60)))"`
+		ESTIMATE="($LEFT_HOURS:$LEFT_MINUTES)"
+	fi
+
+	CHARGE=`perl -e "print(int($CHARGE_NOW / $CHARGE_FULL * 100 + 0.5), \"%\n\")"`
+	DATE=`date +"%a %H:%M"` # %S for seconds
+	echo "$VOLUME_INDICATOR $POWER_SOURCE  $CHARGE $ESTIMATE  $DATE  $USER"
+	
+	CHARGE_PREV=$CHARGE_NOW
+	PREV_TIME=$TIME_NOW
+
+	sleep $INTERVAL
+done

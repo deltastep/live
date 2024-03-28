@@ -15,4 +15,5 @@ fi
 
 xbindkeys # daemon mode
 WindowMaker &
+xterm -geometry 45x2+0+0 deltastep-menu &
 GWorkspace
