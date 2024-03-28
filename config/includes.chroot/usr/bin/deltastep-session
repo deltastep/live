@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# GNUstep user services
+gdnc --daemon &
+gpbs --daemon --GSStartupNotification &
+
 if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
 	# Not configured -- generate the config
 	exec WindowMaker &
