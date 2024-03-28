@@ -4,8 +4,25 @@ set -eu
 FILE_FORMAT="png"
 
 screenshot_filename() {
-	date +"Screen Shot %Y-%m-%d at %H:%M:%S.$FILE_FORMAT"
+	date +"Screen Shot %Y-%m-%d at %H.%M.%S.$FILE_FORMAT"
 	# TODO disambiguation specifier
 }
 
-xwd -root -display :0 | gm convert - "$HOME/Desktop/`screenshot_filename`"
+usage() {
+	echo "Usage: $0 [optons]"
+	echo "If no options are specified, a screenshot is taken of the whole screen"
+	echo "-w  Window screenshot"
+}
+
+if [ $# -eq 1 ]; then
+	OPT="$1"; shift
+	
+	case $OPT in
+		-w) xwd -frame | gm convert - "$HOME/Desktop/`screenshot_filename`" ;;
+	esac
+elif [ $# -eq 0 ]; then
+	xwd -root -display :0 | gm convert - "$HOME/Desktop/`screenshot_filename`"
+else
+	usage >&2
+	exit
+fi

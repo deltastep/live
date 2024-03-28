@@ -1,2 +1,5 @@
 "deltastep-screenshot"
 	Shift + Alt + 3
+
+"deltastep-screenshot -w"
+	Shift + Alt + 4
