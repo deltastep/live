@@ -2,11 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//GNUstep//DTD plist 0.9//EN" "http://www.gnustep.org/plist-0_9.xml">
 <plist version="0.9">
 <dict>
-	<key>GSTheme</key>
-	<string>DeltaSTEP</string>
-	<key>NSInterfaceStyleDefault</key>
-	<string>NSMacintoshInterfaceStyle</string>
 	<key>GSFileBrowserHideDotFiles</key>
 	<integer>1</integer>
+	<key>GSTheme</key>
+	<string>DeltaSTEP</string>
+	<!--GNUstep checks this for the menu, but GWorkspace doesn't -->
+	<!--<key>NSInterfaceStyleDefault</key>
+	<string>NSMacintoshInterfaceStyle</string>-->
+	<key>NSMenuInterfaceStyle</key>
+	<string>NSMacintoshInterfaceStyle</string>
 </dict>
 </plist>
