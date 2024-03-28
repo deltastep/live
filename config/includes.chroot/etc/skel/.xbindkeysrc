@@ -3,3 +3,15 @@
 
 "deltastep-screenshot -w"
 	Shift + Alt + 4
+
+#"amixer set Master unmute; amixer set Master 10%-"
+"pamixer -u -d 10"
+	XF86AudioLowerVolume
+
+#"amixer set Master unmute; amixer set Master 10%+"
+"pamixer -u -i 10"
+	XF86AudioRaiseVolume
+
+#"amixer set Master toggle"
+"pamixer -t"
+	XF86AudioMute

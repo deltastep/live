@@ -15,6 +15,11 @@ xbindkeys
 git
 projectcenter.app
 
+# Audio
+alsa-utils
+pulseaudio
+pamixer
+
 # Utils
 file
 psmisc
