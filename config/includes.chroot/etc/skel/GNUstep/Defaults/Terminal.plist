@@ -3,11 +3,11 @@
 <plist version="0.9">
 <dict>
     <key>BoldTerminalFont</key>
-    <string>DejaVu Sans Mono</string>
+    <string>DejaVuSansMono</string>
     <key>BoldTerminalFontSize</key>
     <real>10</real>
     <key>TerminalFont</key>
-    <string>DejaVu Sans Mono</string>
+    <string>DejaVuSansMono</string>
     <key>TerminalFontSize</key>
     <string>10</string>
 </dict>
