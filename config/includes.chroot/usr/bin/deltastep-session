@@ -9,5 +9,6 @@ if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
 	kill -s INT $PID
 fi
 
+xbindkeys # daemon mode
 WindowMaker &
 GWorkspace
