@@ -1,0 +1,10 @@
+[Unit]
+Description=DeltaSTEP Automount
+
+[Service]
+Type=normal
+User=root
+ExecStart=/usr/bin/deltastep-automount-service
+
+[Install]
+WantedBy=multi-user.target

@@ -1,5 +1,7 @@
 # Core
 sudo
+udisks2
+
 # Desktop
 xorg
 wmaker
