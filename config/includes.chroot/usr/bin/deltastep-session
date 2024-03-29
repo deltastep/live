@@ -14,6 +14,7 @@ if [ ! -f ~/GNUstep/Defaults/WMWindowAttributes ]; then
 	kill -s INT $PID
 fi
 
+light-locker &
 xbindkeys # daemon mode
 WindowMaker &
 xterm -geometry 45x2+0+0 deltastep-menu &

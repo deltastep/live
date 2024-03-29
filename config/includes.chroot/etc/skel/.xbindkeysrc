@@ -15,3 +15,7 @@
 #"amixer set Master toggle"
 "pamixer -t"
 	XF86AudioMute
+
+#"dm-tool lock"
+"loginctl lock-session"
+	XF86ScreenSaver

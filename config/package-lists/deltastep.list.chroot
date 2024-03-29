@@ -12,6 +12,7 @@ terminal.app
 systempreferences.app
 graphicsmagick
 xbindkeys
+light-locker
 
 # Development
 git
