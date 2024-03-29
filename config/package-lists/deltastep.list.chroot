@@ -21,6 +21,11 @@ projectcenter.app
 # Setup Assistant
 dialog
 
+# Network
+iw
+iwd
+dhcpcd
+
 # Audio
 alsa-utils
 pulseaudio

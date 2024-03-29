@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -eu
+
+ARCHIVE_AREAS="main contrib non-free-firmware"
+
+lb config noauto \
+	-a arm64 \
+	-d bookworm \
+	--archive-areas "$ARCHIVE_AREAS" \
+	--firmware-binary false \
+	--firmware-chroot false \
+	--binary-filesystem fat32 \
+	--binary-image hdd \
+	--hdd-size 1024 \
+	--hdd-label "DELTASTEP_LIVE" \
+	--bootappend-live "boot=live components hostname=deltastep" \
+	--debian-installer live \
+	--image-name "DeltaSTEP" \
+	"$@"
+
+mkdir -p config/hooks
+cp config/hooks.*/* config/hooks
