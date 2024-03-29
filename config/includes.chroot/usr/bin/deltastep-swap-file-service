@@ -23,9 +23,9 @@ rm -f "$SWAP_FILE_NAME"
 CHASSIS_TYPE_FILE="/sys/class/dmi/id/chassis_type"
 
 if [ -f  "$CHASSIS_TYPE_FILE" ]; then
-	CHASSIS_TYPE=`cat $CHASSIS_TYPE_FILE
+	CHASSIS_TYPE=`cat $CHASSIS_TYPE_FILE`
 
-	if [ $CHASSIS_TYPE -eq 9] || [ $CHASSIS_TYPE -eq 10 ]; then
+	if [ $CHASSIS_TYPE -eq 9 ] || [ $CHASSIS_TYPE -eq 10 ]; then
 		# Portable
 		: pass
 	else
