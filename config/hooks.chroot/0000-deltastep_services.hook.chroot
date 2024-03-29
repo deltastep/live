@@ -3,3 +3,4 @@
 systemctl enable deltastep-automount
 systemctl enable deltastep-setup-assistant
 systemctl enable deltastep-sleep-lock
+systemctl enable deltastep-swap-file
