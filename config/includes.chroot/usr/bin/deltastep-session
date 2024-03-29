@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu
 
 # GNUstep user services
 gdnc --daemon &
