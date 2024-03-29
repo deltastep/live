@@ -18,4 +18,9 @@ light-locker &
 xbindkeys # daemon mode
 WindowMaker &
 xterm -geometry 45x2+0+0 deltastep-menu &
-GWorkspace
+
+# TODO We need a watchdog for everything else too...
+
+while [ true ]; do
+	GWorkspace && break
+done
