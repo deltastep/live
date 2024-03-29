@@ -1,3 +1,4 @@
 #!/bin/sh -eu
 
 systemctl enable deltastep-automount
+systemctl enable deltastep-setup-assistant

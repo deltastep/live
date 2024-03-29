@@ -17,6 +17,9 @@ xbindkeys
 git
 projectcenter.app
 
+# Setup Assistant
+dialog
+
 # Audio
 alsa-utils
 pulseaudio
