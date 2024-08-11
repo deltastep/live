@@ -5,12 +5,12 @@
     <key>BoldTerminalFont</key>
     <string>DejaVuSansMono-Bold</string>
     <key>BoldTerminalFontSize</key>
-    <real>10</real>
+    <real>12</real>
     <key>Linux_CharacterSet</key>
     <string>utf-8</string>
     <key>TerminalFont</key>
     <string>DejaVuSansMono</string>
     <key>TerminalFontSize</key>
-    <string>10</string>
+    <real>12</real>
 </dict>
 </plist>
