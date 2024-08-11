@@ -15,6 +15,9 @@ xbindkeys
 light-locker
 xdotool
 
+# Fonts
+fonts-noto-color-emoji
+
 # Development
 git
 projectcenter.app
