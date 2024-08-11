@@ -1,5 +1,6 @@
 #!/bin/bash
-set -eu
+set +eu
+# TODO log failures so they can be analyzed
 
 path_to_name() {
     udevadm info -p /sys/"$1" | awk -v FS== '/DEVNAME/ {print $2}'
