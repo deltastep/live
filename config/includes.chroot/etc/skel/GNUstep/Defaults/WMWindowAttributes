@@ -1,5 +1,13 @@
 {
-	"*" = {
-		NoAppIcon = YES;
-	};
+  xterm.deltastep.menu = {
+    NoTitlebar = Yes;
+    AlwaysUserIcon = No;
+    NoResizebar = Yes;
+    KeepOnTop = Yes;
+    Omnipresent = Yes;
+    Unfocusable = Yes;
+  };
+  "*" = {
+    NoAppIcon = YES;
+  };
 }

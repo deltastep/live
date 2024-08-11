@@ -51,10 +51,11 @@ while [ 1 ]; do
 
 	CHARGE=`perl -e "print(int($CHARGE_NOW / $CHARGE_FULL * 100 + 0.5), \"%\n\")"`
 	DATE=`date +"%a %H:%M"` # %S for seconds
-	echo "$VOLUME_INDICATOR $POWER_SOURCE  $CHARGE $ESTIMATE  $DATE  $USER"
+	echo -en "$VOLUME_INDICATOR $POWER_SOURCE  $CHARGE $ESTIMATE  $DATE  $USER"
 	
 	CHARGE_PREV=$CHARGE_NOW
 	PREV_TIME=$TIME_NOW
 
 	sleep $INTERVAL
+	echo ""
 done

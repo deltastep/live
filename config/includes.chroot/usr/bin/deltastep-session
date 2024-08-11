@@ -17,7 +17,7 @@ fi
 light-locker &
 xbindkeys # daemon mode
 WindowMaker &
-xterm -geometry 45x2+0+0 deltastep-menu &
+xterm -geometry 999x1+0+21 -bg gray -fg black -class deltastep.menu deltastep-menu &
 
 # TODO We need a watchdog for everything else too...
 
