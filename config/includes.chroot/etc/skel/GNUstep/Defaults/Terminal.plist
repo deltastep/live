@@ -6,11 +6,11 @@
     <string>DejaVuSansMono-Bold</string>
     <key>BoldTerminalFontSize</key>
     <real>10</real>
+    <key>Linux_CharacterSet</key>
+    <string>utf-8</string>
     <key>TerminalFont</key>
     <string>DejaVuSansMono</string>
     <key>TerminalFontSize</key>
     <string>10</string>
-    <key>Linux_CharacterSet</key>
-    <string>utf-8</string>
 </dict>
 </plist>
