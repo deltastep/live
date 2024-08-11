@@ -43,7 +43,11 @@ while [ 1 ]; do
 		ESTIMATE=""
 	else
 		DELTA=`perl -e "print($CHARGE_PREV - $CHARGE_NOW)"`
-		LEFT=`perl -e "print($CHARGE_NOW / $DELTA * $INTERVAL)"`
+		if [ $DELTA -eq 0 ]; then
+			LEFT=0
+		else
+			LEFT=`perl -e "print($CHARGE_NOW / $DELTA * $INTERVAL)"`
+		fi
 		LEFT_MINUTES=`perl -e "printf(\"%02d\", $LEFT / 60 % 60)"`
 		LEFT_HOURS=`perl -e "print(int($LEFT / (60 * 60)))"`
 		ESTIMATE="($LEFT_HOURS:$LEFT_MINUTES)"
