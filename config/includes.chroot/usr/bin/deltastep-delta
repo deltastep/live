@@ -1,0 +1,57 @@
+#!/bin/bash
+set -eu
+
+LIVE_OVERLAY_FILES_DB="/var/lib/deltastep/live_overlay_files.db"
+
+if [ $EUID -ne 0 ]; then
+	sudo "$0" "$@"
+	exit 0
+fi
+
+if [ ! -e "$LIVE_OVERLAY_FILES_DB" ]; then
+	echo "Error: Cannot open file: $LIVE_OVERLAY_FILES_DB" >&2
+	exit 1
+fi
+
+check_file_against_hash() {
+	local FILENAME="$1"; shift
+	local HASH="$1"; shift
+	LOCAL_HASH=`sha256sum "$FILENAME" | awk '{ print $1 }'`
+	
+	if [ "$LOCAL_HASH" != "$HASH" ]; then
+		echo "M  $FILENAME" >&2
+	fi
+}
+
+delta_file() {
+	if [ $# -lt 2 ]; then
+		echo "Error: Invalid database entry: $LIVE_OVERLAY_FILES_DB:$LINE_NUMBER" >&2
+		exit 1
+	fi
+
+	local HASH="$1"; shift
+	local FILENAME="$*"
+
+	if [ ! -e "$FILENAME" ]; then
+		echo "D  $FILENAME" >&2
+		return 0
+	fi
+
+	local SKEL_PREFIX="/etc/skel"
+	echo "$FILENAME" | grep -e "^$SKEL_PREFIX" > /dev/null && {
+		local SUDO_USER="$SUDO_USER"
+		USER_HOME=`getent passwd $SUDO_USER | cut -d: -f6`
+		local USER_FILENAME=`echo "$FILENAME" | sed -e "s|$SKEL_PREFIX|$USER_HOME|"`
+		check_file_against_hash "$FILENAME"      "$HASH"
+		check_file_against_hash "$USER_FILENAME" "$HASH"
+	} || {
+		check_file_against_hash "$FILENAME" "$HASH"
+	}
+}
+
+LINE_NUMBER=0
+
+while read LINE; do
+	LINE_NUMBER=`expr $LINE_NUMBER + 1`
+	delta_file $LINE
+done < "$LIVE_OVERLAY_FILES_DB"

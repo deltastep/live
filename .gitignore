@@ -18,4 +18,6 @@ config/hooks/
 
 live-image-*
 
+config/includes.chroot/var/lib/deltastep/live_overlay_files.db
+
 .lock

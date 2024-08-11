@@ -11,3 +11,5 @@ rm -f config/common
 rm -f config/source
 
 rm -rf config/hooks/
+
+rm -f config/var/lib/deltastep/live_overlay_files.db

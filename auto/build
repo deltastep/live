@@ -1,4 +1,15 @@
 #!/bin/sh
 set -eu
 
+cd config/includes.chroot
+mkdir -p var/lib/deltastep
+rm -f var/lib/deltastep/live_overlay_files.db
+find . \! -name .DS_Store | sed 's/^\.//' | while read FILENAME; do
+	if [ -f "./$FILENAME" ]; then
+		HASH=`sha256sum "./$FILENAME" | awk '{ print $1 }'`
+		echo "$HASH $FILENAME" >> var/lib/deltastep/live_overlay_files.db
+	fi
+done
+cd -
+
 lb build noauto "$@"
