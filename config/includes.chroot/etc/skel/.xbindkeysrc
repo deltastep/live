@@ -19,3 +19,18 @@
 #"dm-tool lock"
 "loginctl lock-session"
 	XF86ScreenSaver
+
+"deltastep-space left"
+	Mod4 + Left
+
+"deltastep-space right"
+	Mod4 + Right
+
+"deltastep-space new"
+	Mod4 + N
+
+"deltastep-space left_with_window"
+	Shift + Mod4 + Left
+
+"deltastep-space right_with_window"
+	Shift + Mod4 + Right

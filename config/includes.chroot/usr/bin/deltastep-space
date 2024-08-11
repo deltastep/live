@@ -1,0 +1,70 @@
+#!/bin/sh
+set -eu
+
+COMMAND="$1"; shift
+
+update_gworkspace() {
+	RESOLUTION=`xrandr | grep '*' | awk '{print $1}'`
+	WINDOW_ID=`xwininfo -tree -root -int | grep "GWorkspace" | grep "$RESOLUTION"`
+
+	xdotool set_desktop_for_window "$WINDOW_ID" `xdotool get_desktop`
+}
+
+move_left() {
+	CURRENT_DESKTOP=`xdotool get_desktop`
+
+	if [ $CURRENT_DESKTOP -gt 0 ]; then
+		xdotool set_desktop --relative ' -1'
+		update_gworkspace
+	fi
+}
+
+move_right() {
+	CURRENT_DESKTOP=`xdotool get_desktop`
+	DESKTOPS=`xdotool get_num_desktops`
+	
+	if [ $CURRENT_DESKTOP -lt `expr $DESKTOPS - 1` ]; then
+		xdotool set_desktop --relative '+1'
+		update_gworkspace
+	fi
+}
+
+move_left_with_window() {
+	CURRENT_DESKTOP=`xdotool get_desktop`
+	DESKTOPS=`xdotool get_num_desktops`
+
+	WINDOW=`xdotool getwindowfocus`
+
+	if [ $CURRENT_DESKTOP -gt 0 ]; then
+		xdotool set_desktop_for_window "$WINDOW" `expr $CURRENT_DESKTOP - 1`
+		xdotool set_desktop --relative ' -1'
+		update_gworkspace
+	#	xdotool windowfocus "$WINDOW"
+	fi
+}
+
+move_right_with_window() {
+	CURRENT_DESKTOP=`xdotool get_desktop`
+	DESKTOPS=`xdotool get_num_desktops`
+
+	WINDOW=`xdotool getwindowfocus` # TODO maybe should be getactivewindow?
+
+	if [ $CURRENT_DESKTOP -lt `expr $DESKTOPS - 1` ]; then
+		xdotool set_desktop_for_window "$WINDOW" `expr $CURRENT_DESKTOP + 1`
+		xdotool set_desktop --relative '+1'
+		update_gworkspace
+	#	xdotool windowfocus "$WINDOW"
+	fi
+}
+
+new() {
+	xdotool set_desktop `xdotool get_num_desktops`
+}
+
+case $COMMAND in
+	left) move_left ;;
+	right) move_right ;;
+	left_with_window) move_left_with_window ;;
+	right_with_window) move_right_with_window ;;
+	new) new ;;
+esac

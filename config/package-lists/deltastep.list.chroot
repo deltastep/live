@@ -13,6 +13,7 @@ systempreferences.app
 graphicsmagick
 xbindkeys
 light-locker
+xdotool
 
 # Development
 git
