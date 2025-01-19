@@ -6,6 +6,7 @@ ruby
 texinfo
 libbz2-dev
 libcurl4-openssl-dev
-libexpat-dev
+# libexpat-dev
+# maybe should be libexpat-dev1 ???
 libncurses-dev
 zlib1g-dev
