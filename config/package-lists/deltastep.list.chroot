@@ -22,6 +22,10 @@ fonts-noto-color-emoji
 git
 projectcenter.app
 
+# Development: Hardware
+usbutils
+pciutils
+
 # Setup Assistant
 dialog
 
