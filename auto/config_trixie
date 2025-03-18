@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+ARCHIVE_AREAS="main contrib non-free-firmware"
+
+lb config noauto \
+	-a amd64 \
+	-d trixie \
+	--archive-areas "$ARCHIVE_AREAS" \
+	--iso-application "DeltaSTEP Live" \
+	--iso-publisher "DeltaSTEP Project" \
+	--bootappend-live "boot=live components hostname=deltastep" \
+	--debian-installer live \
+	--image-name "DeltaSTEP" \
+	"$@"
+
+mkdir -p config/hooks/normal
+cp config/hooks.*/* config/hooks/normal
