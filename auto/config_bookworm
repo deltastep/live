@@ -5,7 +5,7 @@ ARCHIVE_AREAS="main contrib non-free-firmware"
 
 lb config noauto \
 	-a amd64 \
-	-d trixie \
+	-d bookworm \
 	--archive-areas "$ARCHIVE_AREAS" \
 	--iso-application "DeltaSTEP Live" \
 	--iso-publisher "DeltaSTEP Project" \
